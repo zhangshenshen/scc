@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zss.scc.dao.mapper.UserMapper">
+    <select id="getUserById" resultType="com.zss.scc.dao.entity.User">
+    </select>
+
+    <select id="getUserList" resultType="com.zss.scc.dao.entity.User">
+        select *
+        from test.user u;
+    </select>
+
+    <insert id="insertUser">
+    </insert>
+
+    <update id="updateUser">
+    </update>
+
+    <delete id="deleteUser">
+    </delete>
+</mapper>

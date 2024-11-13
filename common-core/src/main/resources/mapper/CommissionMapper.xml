@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zss.scc.dao.mapper.CommissionMapper">
+    <resultMap id="CommissionResultMap" type="com.zss.scc.dao.entity.Commission">
+        <result property="userId" column="user_id"/>
+        <result property="compCode" column="comp_code"/>
+        <result property="commissionType" column="commission_type"/>
+        <result property="recordStatus" column="record_status"/>
+        <result property="contributedBy" column="contributed_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="perfAssignId" column="perf_assign_id"/>
+    </resultMap>
+
+    <select id="selectCommissionById" resultType="com.zss.scc.dao.entity.Commission">
+    </select>
+
+    <select id="selectCommissionListByUserId" resultType="com.zss.scc.dao.entity.Commission">
+        select *
+        from test.commission c
+        where c.user_id = #{userId};
+    </select>
+
+    <select id="selectCommissionByUserIdAndYm" resultType="com.zss.scc.dao.entity.Commission">
+        select *
+        from test.commission c
+        where user_id = #{userId}
+          and ym = #{ym};
+    </select>
+
+    <select id="selectCommissionByCompCodeAndUserIdAndYm" resultType="com.zss.scc.dao.entity.Commission">
+        select *
+        from test.commission c
+        where c.comp_code = #{compCode}
+          and c.ym = #{ym}
+          and c.user_id = #{userId};
+    </select>
+
+    <select id="selectAllCommission" resultMap="CommissionResultMap">
+        select *
+        from test.commission c;
+    </select>
+
+    <insert id="addCommission">
+    </insert>
+</mapper>
